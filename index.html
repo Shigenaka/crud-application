@@ -6,24 +6,27 @@
 
         <!-- jQuery library -->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.0/jquery.raty.min.js"></script>
+
         <!-- Bootstrap library-->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- parse library -->
         <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 
-        <script type="text/javascript" src="js/review.js"></script>
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <div id="heading"class="Container">
             <h1>Fallout 4</h1>
             <img src="img/fallout4.jpg">
-            <p>Average Rating: </p>
-            <p>As the sole survivor of Vault 111, you enter a world destroyed by nuclear war. Every second is a fight for survival, and every choice is yours. Only you can rebuild and determine the fate of the Wasteland. Welcome home.</p>
+            <h4>Average Rating: <div id="average"></div></h4>
+            <h4>As the sole survivor of Vault 111, you enter a world destroyed by nuclear war. Every second is a fight for survival, and every choice is yours. Only you can rebuild and determine the fate of the Wasteland. Welcome home.</h4>
         </div>
         <div id="review" class="container">
             <h2>Write a review!</h2>   
             <form>
+                <div id="reviewRating"></div>
                 <div class="form-group">
                     <input class="form-control" id="title" placeholder="A title for your review"></input>
                 </div>
@@ -31,15 +34,14 @@
                     <input  class="form-control" id="platform" placeholder="What platform did you play this on?"></input>
                 </div>
                 <div class="form-group">
-                    <input  class="form-control" id="description" placeholder="What do you think of Fallout 4?"></input>
+                    <textarea class="form-control" rows="2" id="description" placeholder="What do you think of Fallout 4?"></textarea>
                 </div>
                 <button class="btn btn-primary" type="submit">Save</button>
             </form>
         </div>
 
-        <div class="container">
-            <ul id="reviewList">
-            </ul>
+        <div id="reviews"class="container">
         </div>
     </body>
+    <script type="text/javascript" src="js/review.js"></script>
 </html>
