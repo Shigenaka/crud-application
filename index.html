@@ -7,6 +7,8 @@
         <!-- jQuery library -->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.0/jquery.raty.min.js"></script>
+        <script type="text/javascript" src="lib/jquery.raty-fa.js"></script>
+
 
         <!-- Bootstrap library-->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -28,14 +30,14 @@
                     <img src="img/fallout4.jpg">
                 </div>
                 <div id="info" class="col-xs-12 col-md-6"> 
-                    <h4>Average Rating: <div id="average"></div></h4>
+                    <h4>Average Rating: <span id="average"></span></h4>
                     <h4>As the sole survivor of Vault 111, you enter a world destroyed by nuclear war. Every second is a fight for survival, and every choice is yours. Only you can rebuild and determine the fate of the Wasteland. Welcome home.</h4>
                 </div>
             </div>
         </div>
         <div id="review" class="container">
             <div class="col-xs-12">
-                <h2>Write a review!</h2>   
+                <h2>Play it? Write a review!</h2>   
                 <form>
                     <div id="reviewRating"></div>
                     <div class="form-group">
@@ -52,7 +54,10 @@
             </div>
         </div>
 
-        <div id="reviews"class="container">
+        <div class="container">
+            <h2>Reviews</h2>
+            <div id="reviews">
+            </div>
         </div>
     </body>
     <script type="text/javascript" src="js/review.js"></script>
