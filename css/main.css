@@ -1,5 +1,5 @@
 img {
-	max-width: 400px;
+	max-width: 100%;
 	border-radius: 5px;
 }
 
@@ -16,4 +16,18 @@ h1 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border-radius: 5px;
+}
+
+.well {
+	opacity: .8;
+}
+
+.well p {
+	font-size: 1.25em;
+}
+
+@media (min-width: 768px) {
+	#info {
+		margin-top: 80px;
+	}
 }

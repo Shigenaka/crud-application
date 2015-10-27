@@ -14,30 +14,42 @@
         <!-- parse library -->
         <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- css sheet -->
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <div id="heading"class="Container">
-            <h1>Fallout 4</h1>
-            <img src="img/fallout4.jpg">
-            <h4>Average Rating: <div id="average"></div></h4>
-            <h4>As the sole survivor of Vault 111, you enter a world destroyed by nuclear war. Every second is a fight for survival, and every choice is yours. Only you can rebuild and determine the fate of the Wasteland. Welcome home.</h4>
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <h1>Fallout 4</h1>
+                    <img src="img/fallout4.jpg">
+                </div>
+                <div id="info" class="col-xs-12 col-md-6"> 
+                    <h4>Average Rating: <div id="average"></div></h4>
+                    <h4>As the sole survivor of Vault 111, you enter a world destroyed by nuclear war. Every second is a fight for survival, and every choice is yours. Only you can rebuild and determine the fate of the Wasteland. Welcome home.</h4>
+                </div>
+            </div>
         </div>
         <div id="review" class="container">
-            <h2>Write a review!</h2>   
-            <form>
-                <div id="reviewRating"></div>
-                <div class="form-group">
-                    <input class="form-control" id="title" placeholder="A title for your review"></input>
-                </div>
-                <div class="form-group">
-                    <input  class="form-control" id="platform" placeholder="What platform did you play this on?"></input>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="2" id="description" placeholder="What do you think of Fallout 4?"></textarea>
-                </div>
-                <button class="btn btn-primary" type="submit">Save</button>
-            </form>
+            <div class="col-xs-12">
+                <h2>Write a review!</h2>   
+                <form>
+                    <div id="reviewRating"></div>
+                    <div class="form-group">
+                        <input class="form-control" id="title" placeholder="A title for your review"></input>
+                    </div>
+                    <div class="form-group">
+                        <input  class="form-control" id="platform" placeholder="What platform did you play this on?"></input>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="2" id="description" placeholder="What do you think of Fallout 4?"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Save</button>
+                </form>
+            </div>
         </div>
 
         <div id="reviews"class="container">

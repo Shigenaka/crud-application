@@ -5,7 +5,7 @@ Parse.initialize("U71Yme9Alr9zr9Y97ypoFMBLvyWNamVL6y6LzVkl", "56ELOFgjlXat2e8Ujc
 var Review = Parse.Object.extend('Review');
 
 //creates a rating for the review form
-$('#reviewRating').raty({ path:'https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.0/images' });
+$('#reviewRating').raty({ path:'https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.0/images', size: 24});
 
 //gets data from a submitted form
 $('form').submit(function() {
@@ -43,24 +43,24 @@ var getData = function() {
 }
 
 var buildList = function(data) {
-	$('ul').empty()
+	$('#reviews').empty()
 
 	data.forEach(function(item){
 		addItem(item);
 	})
 }
 
+//adds review to bottom of page
 var addItem = function(item) {
 	var title = item.get('title')
 	var platform = item.get('platform')
 	var description = item.get('description')
 	var rating = item.get('rating')
 	
-	var div = $('<div class="well"> <h3>' + title + '</h3><p>System: ' + platform + '</p><h4>' + description + '</h4></div>') 
+	var div = $('<div class="well"><h3>' + title + '</h3><p>Console: ' + platform + '</p><p>' + description + '<p></div>');
 	
-	//var ratyRating = $('#userRating').raty({ path:'https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.0/images', readOnly: true});
-
-	//userRating.append(rating);
+	var ratyRate = $('.well').raty({ path:'https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.0/images', readOnly: true, score: rating });
+	$('h3').prepend(ratyRate);
 
 	var deleteMe = $('<button class="btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>');
 	
@@ -70,7 +70,7 @@ var addItem = function(item) {
 		})
 	})
 
-	div.append(deleteMe);
+	div.prepend(deleteMe);
 	$('#reviews').append(div)
 	
 }
