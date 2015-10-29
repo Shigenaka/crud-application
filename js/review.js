@@ -121,7 +121,6 @@ var addItem = function(item) {
 		readOnly: true,
 		half: true,
 		score: revScore/revCount
-		getData()
 	});
 }
 
