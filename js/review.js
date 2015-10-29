@@ -105,11 +105,13 @@ var addItem = function(item) {
 	thumbsUp.click(function() {
 		item.increment('pos')
 		item.increment('total')
+		item.save();
 		getData()
 	});
 
 	thumbsDown.click(function() {
 		item.increment('total')
+		item.save();
 		getData()
 	});
 
