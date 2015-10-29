@@ -21,6 +21,9 @@ $('form').submit(function() {
 		$(this).val('');
 	});
 
+	review.set('pos', 0);
+	review.set('total', 0);
+
 	//saves the data
 	review.save(null, {
 		success:getData
@@ -60,6 +63,9 @@ var addItem = function(item) {
 	var description = item.get('description');
 	var rating = item.get('rating');
 
+	var pos = item.get('pos');
+	var total = item.get('total');
+
 	revScore += rating;
 
 	var div = $('<div class="well"></div>');
@@ -68,6 +74,7 @@ var addItem = function(item) {
 	var title = $('<h3>' + title + '</h3>');
 	var console = $('<p>Console: ' + platform + '</p>');
 	var descrip = $('<p>' + description + '<p>');
+	var useful = $('<p>' + pos + ' out of ' + total + ' found this useful<p>');
 
 	var thumbsUp = $('<button id="thumbs" class="btn btn-primary btn-xs thumbup"><i class="fa fa-thumbs-up"></i></button>');
 	var thumbsDown = $('<button id="thumbs" class="btn btn-primary btn-xs"><i class="fa fa-thumbs-down"></i></button>')
@@ -84,6 +91,7 @@ var addItem = function(item) {
 	userRating.append(title);
 	div.append(console);
 	div.append(descrip);
+	div.append(useful);
 
 	var deleteMe = $('<button class="btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>');
 	
@@ -93,17 +101,27 @@ var addItem = function(item) {
 		})
 	})
 
+	//calculates reviews and takes into account new clicks
 	thumbsUp.click(function() {
+		item.increment('pos')
+		item.increment('total')
+		getData()
+	});
 
-	})
+	thumbsDown.click(function() {
+		item.increment('total')
+		getData()
+	});
 
 	div.prepend(deleteMe);
 	$('#reviews').append(div)
 	
+	//creates average rating
 	$('#average').raty({
 		readOnly: true,
 		half: true,
 		score: revScore/revCount
+		getData()
 	});
 }
 

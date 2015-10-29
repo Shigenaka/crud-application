@@ -11,6 +11,10 @@ h1 {
 	font-size: 4em;
 }
 
+body {
+	background-color: #dbdce3;
+}
+
 #review {
 	background-color: #E9EAEE;
 	margin-top: 15px;
